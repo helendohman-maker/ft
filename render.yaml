@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: fabric-tracker
+    runtime: node
+    plan: free
+    buildCommand: npm install && npm run build && npx drizzle-kit push
+    startCommand: NODE_ENV=production node dist/index.cjs
